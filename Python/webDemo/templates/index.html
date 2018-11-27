@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DJango</title>
+    <style>
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+<h1 style="...">用户登录</h1>
+<form action="/login/" method="post">
+    账户：
+    <input type="text" name="name"/>
+    <p>
+    密码：
+    <input type="password" name="pwd"/>
+    </p>
+        <p>
+    城市：
+    <input type="text" name="cityname"/>
+    </p>
+        <p>
+    地址：
+    <input type="text" name="cityadd"/>
+    </p>
+    <p>
+    <input type="submit" value="登入"/>
+    </p>
+    <span class="error">{{ error_msg }}</span>
+</form>
+<hr/>
+<h1 style="...">用户展示</h1>
+<table border="1">
+      <tbody>
+      {% for line in data %}
+           <tr>
+               <td>{{ line.user }}</td>
+               <td>{{ line.pwd }}</td>
+           </tr>
+      {% endfor %}
+      </tbody>
+</table>
+<h1 style="...">城市</h1>
+<table border="1">
+      <tbody>
+      {% for line1 in data1 %}
+           <tr>
+               <td>{{ line1.CityName}}</td>
+               <td>{{ line1.CityAdd}}</td>
+           </tr>
+      {% endfor %}
+      </tbody>
+</table>
+<h1 style="...">员工</h1>
+<table border="1">
+      <tbody>
+      {% for line2 in data2 %}
+           <tr>
+               <td>{{ line2.name}}</td>
+           </tr>
+      {% endfor %}
+      </tbody>
+</table>
+
+</body>
+</html>
